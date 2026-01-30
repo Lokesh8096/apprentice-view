@@ -92,7 +92,7 @@ export const candidates: Candidate[] = [
       ],
       recordingTitle: "NxtWave Employability – DSA Interview",
       recordingSubtitle: "Ashish Tandi – 2025/12/23 09:43 GMT+05:30",
-      recordingUrl: "https://drive.google.com/file/d/1kMFbZo1RbYWDRFKxXzZPCXsqmvpk1Fc1/view?usp=sharing",
+      recordingUrl: "https://drive.google.com/file/d/1OvHZwafAoyj8CH30QI31qjrQMbM2Tf8c/view?usp=sharing",
     },
     tr2: {
       type: "technical",
