@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { FileText, ExternalLink, User, Award } from "lucide-react";
+import { FileText, ExternalLink, User, Award, Share2 } from "lucide-react";
+import { useState } from "react";
 
 interface HeaderSectionProps {
   candidateName: string;
@@ -8,6 +9,7 @@ interface HeaderSectionProps {
   overallScore: number;
   resumeUrl: string;
   topinReportUrl: string;
+  candidateId?: string;
 }
 
 export const HeaderSection = ({
@@ -16,7 +18,17 @@ export const HeaderSection = ({
   overallScore,
   resumeUrl,
   topinReportUrl,
+  candidateId,
 }: HeaderSectionProps) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleShareLink = () => {
+    const reportLink = `${window.location.origin}/${candidateId}`;
+    navigator.clipboard.writeText(reportLink);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="relative overflow-hidden rounded-xl bg-gradient-hero p-8 text-primary-foreground shadow-elevated hover:shadow-elevated transition-all duration-300 cursor-default">
       {/* Background decoration */}
@@ -48,7 +60,9 @@ export const HeaderSection = ({
               <p className="text-sm font-medium uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                 Overall Score
               </p>
-              <p className="text-4xl font-bold group-hover:scale-110 transition-transform duration-300 origin-left" style={{ transformOrigin: 'left' }}>{overallScore}</p>
+              <p className="text-4xl font-bold group-hover:scale-110 transition-transform duration-300 origin-left" style={{ transformOrigin: "left" }}>
+                {overallScore}
+              </p>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -74,6 +88,16 @@ export const HeaderSection = ({
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Topin Report
                   </a>
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="bg-white/20 text-primary-foreground hover:bg-white/30 border-0 transition-all duration-300"
+                  onClick={handleShareLink}
+                  title="Copy shareable link to clipboard"
+                >
+                  <Share2 className="mr-2 h-4 w-4" />
+                  {copied ? "Copied!" : "Share Link"}
                 </Button>
               </div>
               <div className="rounded-lg bg-white/10 px-3 py-2 text-xs backdrop-blur-sm opacity-90 hover:bg-white/20 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-lg">
