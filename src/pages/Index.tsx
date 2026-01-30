@@ -48,6 +48,7 @@ const tr1Data = {
   ],
   recordingTitle: "NxtWave Employability – DSA Interview",
   recordingSubtitle: "Ashish Tandi – 2025/12/23 09:43 GMT+05:30",
+  recordingUrl: "https://drive.google.com/file/d/1kMFbZo1RbYWDRFKxXzZPCXsqmvpk1Fc1/view?usp=sharing",
 };
 
 const tr2Data = {
@@ -87,6 +88,7 @@ const tr2Data = {
   ],
   recordingTitle: "NxtWave Employability – Interview Round 2",
   recordingSubtitle: "Harsh Mishra – 2025/12/28 11:42 GMT+05:30",
+  recordingUrl: "https://drive.google.com/file/d/12yMyWFxKPLsFDCNRRv_Cu2AyU0eltkCD/view?usp=sharing",
 };
 
 const strengths = [
@@ -120,13 +122,13 @@ const resources = [
   {
     title: "DSA Interview Recording",
     description: "TR1 Interview with Mostafijur Rahaman – Dec 23, 2025",
-    url: "#",
+    url: "https://drive.google.com/file/d/1kMFbZo1RbYWDRFKxXzZPCXsqmvpk1Fc1/view?usp=sharing",
     type: "recording" as const,
   },
   {
     title: "Technical Interview Recording",
     description: "TR2 Interview with Abhishek Sharma – Dec 28, 2025",
-    url: "#",
+    url: "https://drive.google.com/file/d/12yMyWFxKPLsFDCNRRv_Cu2AyU0eltkCD/view?usp=sharing",
     type: "recording" as const,
   },
 ];

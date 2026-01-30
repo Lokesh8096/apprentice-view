@@ -22,7 +22,7 @@ export const HeaderSection = ({
       {/* Background decoration */}
       <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-white/5 blur-2xl" />
-      
+
       <div className="relative z-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-4">
@@ -42,7 +42,7 @@ export const HeaderSection = ({
               </Badge>
             </div>
           </div>
-          
+
           <div className="flex flex-col items-start gap-4 lg:items-end">
             <div className="rounded-xl bg-white/20 px-6 py-4 backdrop-blur-sm">
               <p className="text-sm font-medium uppercase tracking-wider opacity-80">
@@ -50,30 +50,37 @@ export const HeaderSection = ({
               </p>
               <p className="text-4xl font-bold">{overallScore}</p>
             </div>
-            
-            <div className="flex flex-wrap gap-3">
-              <Button
-                variant="secondary"
-                size="sm"
-                className="bg-white/20 text-primary-foreground hover:bg-white/30 border-0"
-                asChild
-              >
-                <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                  <FileText className="mr-2 h-4 w-4" />
-                  View Resume
-                </a>
-              </Button>
-              <Button
-                variant="secondary"
-                size="sm"
-                className="bg-white/20 text-primary-foreground hover:bg-white/30 border-0"
-                asChild
-              >
-                <a href={topinReportUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Topin Report
-                </a>
-              </Button>
+
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="bg-white/20 text-primary-foreground hover:bg-white/30 border-0"
+                  asChild
+                >
+                  <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+                    <FileText className="mr-2 h-4 w-4" />
+                    View Resume
+                  </a>
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="bg-white/20 text-primary-foreground hover:bg-white/30 border-0"
+                  asChild
+                >
+                  <a href={topinReportUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Topin Report
+                  </a>
+                </Button>
+              </div>
+              <div className="rounded-lg bg-white/10 px-3 py-2 text-xs backdrop-blur-sm opacity-90">
+                <p className="font-semibold text-white mb-1">Access Credentials:</p>
+                <p className="text-white/90">Mobile: 9800141844</p>
+                <p className="text-white/90">OTP: 561811</p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  Clock, 
-  User, 
-  PlayCircle, 
-  CheckCircle2, 
-  Code, 
+import {
+  Clock,
+  User,
+  PlayCircle,
+  CheckCircle2,
+  Code,
   Brain,
   MessageSquare,
   Lightbulb,
@@ -27,6 +27,7 @@ interface InterviewSectionProps {
   }[];
   recordingTitle: string;
   recordingSubtitle: string;
+  recordingUrl?: string;
 }
 
 export const InterviewSection = ({
@@ -40,14 +41,15 @@ export const InterviewSection = ({
   insights,
   recordingTitle,
   recordingSubtitle,
+  recordingUrl,
 }: InterviewSectionProps) => {
   const Icon = type === "dsa" ? Brain : Code;
   const iconColor = type === "dsa" ? "text-warning" : "text-success";
   const badgeColor = type === "dsa" ? "bg-warning-muted text-warning" : "bg-success-muted text-success";
-  
+
   return (
-    <Card 
-      className="border-0 shadow-card animate-fade-in overflow-hidden" 
+    <Card
+      className="border-0 shadow-card animate-fade-in overflow-hidden"
       style={{ animationDelay: type === "dsa" ? "0.2s" : "0.3s" }}
     >
       <CardHeader className="border-b border-border/50 bg-muted/30">
@@ -91,7 +93,7 @@ export const InterviewSection = ({
                 ))}
               </div>
             </div>
-            
+
             {/* Questions */}
             <div>
               <h4 className="mb-3 flex items-center gap-2 font-semibold text-foreground">
@@ -108,7 +110,7 @@ export const InterviewSection = ({
               </ul>
             </div>
           </div>
-          
+
           {/* Right column - Insights */}
           <div>
             <h4 className="mb-3 flex items-center gap-2 font-semibold text-foreground">
@@ -117,8 +119,8 @@ export const InterviewSection = ({
             </h4>
             <div className="space-y-3">
               {insights.map((insight, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="rounded-lg border border-border/50 bg-muted/30 p-3"
                 >
                   <p className="font-medium text-foreground">{insight.title}</p>
@@ -126,7 +128,7 @@ export const InterviewSection = ({
                 </div>
               ))}
             </div>
-            
+
             {/* Recording link */}
             <div className="mt-4 rounded-lg bg-primary/5 p-4">
               <div className="flex items-start gap-3">
@@ -135,9 +137,17 @@ export const InterviewSection = ({
                   <p className="text-sm font-medium text-foreground">{recordingTitle}</p>
                   <p className="text-xs text-muted-foreground">{recordingSubtitle}</p>
                 </div>
-                <Button variant="outline" size="sm">
-                  View
-                </Button>
+                {recordingUrl ? (
+                  <Button variant="outline" size="sm" asChild>
+                    <a href={recordingUrl} target="_blank" rel="noopener noreferrer">
+                      View
+                    </a>
+                  </Button>
+                ) : (
+                  <Button variant="outline" size="sm" disabled>
+                    View
+                  </Button>
+                )}
               </div>
             </div>
           </div>
