@@ -257,7 +257,7 @@ export const candidates: Candidate[] = [
     },
   },
   {
-    id: "harshit-pandey",
+    id: "harshitpandey",
     name: "Harshit Pandey",
     recommendation: "Strong Hire",
     overallScore: 129.91,
